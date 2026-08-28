@@ -1,64 +1,24 @@
 # Jython AI Agent
 
-## Exemplos com Caelum Stella
+> ### 🎥 [▶ ASSISTIR AO VÍDEO DE DEMONSTRAÇÃO](https://youtu.be/wu0MpKKdosI)
 
-```text
-O CPF 529.982.247-25 é válido?              -> stella_validate_document
-Formate o CPF 52998224725.                  -> stella_transform_document
-Gere um CNPJ válido para teste.             -> stella_generate_document
-Escreva 123 por extenso.                    -> stella_number_to_words
-Quais documentos a Stella consegue gerar?   -> stella_capabilities
-Valide estes CPFs em lote: 52998224725,...  -> stella_validate_batch
-```
-
-Para documentos reais, prefira o modo local `/stella`, que não envia o valor à
-Groq. Veja a lista completa de parâmetros e exemplos em
-[`knowledge/05_tools.md`](knowledge/05_tools.md).
-
-> A integração Caelum Stella valida documentos brasileiros localmente. Use
-> `/stella` para não enviar documentos à Groq; veja `knowledge/09_stella.md`.
-
-> Assistente técnico **agentivo** de terminal, escrito em **Python**, executado
-> pelo **Jython** sobre a **JVM**. Conversa com o modelo `openai/gpt-oss-120b`
-> na **Groq** e executa ferramentas locais — consultar a documentação do
-> projeto, rodar a suíte de testes, pesquisar conversas antigas e apurar
-> métricas de uso — sempre através de **APIs Java**.
-
-```text
-Python  ->  Jython  ->  JVM  ->  Classes Java  ->  Groq API  ->  Tools locais
-```
-
-**Disciplina:** Paradigmas de Linguagens de Programação — 2026.2
-**Atividade:** Usar o compilador Jython
-
-```text
-==================================================
-              JYTHON AI AGENT
-==================================================
-
-Jython : 2.7.4
-Java   : 11.0.32
-Modelo : openai/gpt-oss-120b
-Tools  : 6
-Banco  : conectado (sessão 3)
-KB     : 8 documentos (25 trechos)
-
-Você: rode os testes de fuzzy
-
-[executando os testes... 495 ms]
-
-Assistente:
-Foram executados os testes de fuzzy. Todos os 4 testes passaram:
-
-- T08 – Busca fuzzy com correspondência exata
-- T09 – Busca fuzzy com erro de digitação
-- T10 – Knowledge Search respeita top_k
-- T14 – Busca fuzzy no histórico de conversas
-
-Tempo total: 422 ms. Nenhum erro foi encontrado.
-
-   [1.9s | 2 chamada(s) LLM | tools: run_project_tests | 1402 tokens]
-```
+### Acesso rápido
+1. [📌 Sobre o projeto](#sobre-o-projeto)
+2. [🎯 Objetivo acadêmico](#objetivo-acadêmico)
+3. [🐍 O que é Jython](#o-que-é-jython)
+4. [🏗️ Arquitetura](#arquitetura)
+5. [⚙️ Como funciona](#como-funciona)
+6. [☕ Integração Python + Java](#integração-python--java)
+7. [📚 APIs Java utilizadas](#apis-java-utilizadas)
+8. [🛠️ As seis ferramentas do agente](#as-seis-ferramentas-do-agente)
+9. [📂 Estrutura do projeto](#estrutura-do-projeto)
+10. [▶️ Executando com Docker](#executando-com-docker)
+11. [💬 Utilizando o agente](#utilizando-o-agente)
+12. [🧪 Testes automatizados](#testes-automatizados)
+13. [💾 Persistência e métricas](#persistência-e-métricas)
+14. [🔐 Segurança da API Key](#segurança-da-api-key)
+15. [📖 Documentação técnica](#documentação-técnica)
+16. [🎥 Demonstração](#demonstração)
 
 ---
 
@@ -996,40 +956,8 @@ na máquina.
 ## Demonstração
 
 Vídeo de apresentação (até 5 minutos):
+[Projeto PLP explicando — YouTube](https://youtu.be/wu0MpKKdosI)
 
-> **Link do vídeo:** _(adicione aqui o link do Loom)_
-
-Roteiro sugerido:
-
-```text
-0:00 - 0:30   Apresentação do projeto
-0:30 - 1:10   O que é Jython e a diferença para o CPython
-1:10 - 1:50   Os imports Java dentro dos arquivos .py
-1:50 - 2:30   groq_client.py (java.net/java.io) e database (java.sql)
-2:30 - 3:00   Dockerfile, classpath e injeção do .env
-3:00 - 4:20   Executando: conhecimento, testes, histórico e métricas
-4:20 - 5:00   Interoperabilidade e conclusão
-```
-
-Comandos da demonstração:
-
-```bash
-docker build -t jython-ai-agent .
-docker volume create jython-ai-data
-docker run --rm -it --env-file .env -v jython-ai-data:/app/data jython-ai-agent
-```
-
-Perguntas que mostram tudo funcionando:
-
-```text
-como esse projeto usa Jython?          -> search_project_knowledge
-quais testes eu posso executar?        -> list_project_tests
-rode os testes de fuzzy                -> run_project_tests
-eu já falei sobre fuzzy antes?         -> search_chat_history
-quantos tokens já usamos?              -> get_usage_metrics
-```
-
----
 
 ## Autor
 
@@ -1039,11 +967,8 @@ Projeto desenvolvido para a disciplina **Paradigmas de Linguagens de
 Programação** (2026.2) — Prof. Thiago Sales.
 
 ---
-## Link do vídeo explicativo do projeto
-[Projeto PLP explicando — YouTube](https://youtu.be/wu0MpKKdosI)
 
 ## Referências
-
 - [Jython — site oficial](https://www.jython.org/)
 - [Jython 2.7.4 no Maven Central](https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.4/)
 - [Groq — API Reference](https://console.groq.com/docs/api-reference)
