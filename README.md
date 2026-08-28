@@ -1033,12 +1033,14 @@ quantos tokens já usamos?              -> get_usage_metrics
 
 ## Autor
 
-_(preencha com o seu nome e o link do seu GitHub)_
+_Thalia de Oliveira Santos_
 
 Projeto desenvolvido para a disciplina **Paradigmas de Linguagens de
 Programação** (2026.2) — Prof. Thiago Sales.
 
 ---
+## Link do vídeo explicativo do projeto
+[Projeto PLP explicando — YouTube](https://youtu.be/wu0MpKKdosI)
 
 ## Referências
 
